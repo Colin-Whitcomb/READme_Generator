@@ -9,16 +9,16 @@ inquirer.prompt(
         message: "What do you want to title it?"
     },
     {
+        // GitHub
+        type: "input",
+        name: "git",
+        message: "What is your GitHub username?"
+    },
+    {
         // Description
         type: "input",
         message: "What is the READme Description?",
         name: "description"
-    },
-    {
-        // Table of Contents
-        type: "input",
-        message: "What would you like in Table of Contents?",
-        name: "tableOfContents"
     },
     {
         // Installation
@@ -64,26 +64,71 @@ inquirer.prompt(
     // The generated README includes 1 badge that's specific to the repository.
 
 
-
 // Creates object from user inputs 
 ]).then(function (data) {
-
     console.log(data);
-});
+
+    // Taking user inputs and moving to page
+    var title = data.title;
+    var github = data.git;
+    var description = data.description;
+    var install = data.install;
+    var usage = data.usage;
+    var license = data.license;
+    var contributors = data.contributors;
+    var tests = data.tests;
+    var questions = data.questions;
+
+
+    // format of ReadMe
+    var page = 
+`
+# ${ title }
+
+### [GitHub Repository](https://github.com/${ github })
+    
+### Description
+${ description }
+    
+### Table of contents (links of:)
+    
+* Installation
+* Usage
+* License
+* Contributing
+* Tests
+* Questions
+    
+### Installation
+${ install }
+
+### Usage
+${ usage }
+
+### License badge
+[![License: ${ license }]("https://img.shields.io/badge/License-${ license }-yellow.svg)](https://opensource.org/licenses/${ license }")
+   
+
+### Contributing
+${ contributors }
+
+### Tests
+${ tests }
+
+### Questions
+ ${ questions }`
+
+
+
+
 
 
 // Takes object and puts it in READme
-var filename = "README.md"
-    console.log(filename);
+fs.writeFile('README.md', page, data, (err) => {
+    if (err) throw err;
+    console.log('it worked!');
+});
 
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-
-      if (err) {
-        return console.log(err);
-      }
-
-    console.log("Success!");
-
-    });
+});
 
 // The generated README includes 1 badge that's specific to the repository.
