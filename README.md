@@ -11,7 +11,7 @@
 </p>
     
 ## Summary & Process
-For this project, our objective was to create an app that dynamically generates READmes with Node.js commands. I made sure to include all required elements including links to GitHub repos, url request for GitHub profile picture, GitHub Badge, and table of contents. 
+For this project, our objective was to create an app that dynamically generates READmes with Node.js commands. I made sure to include all required elements including links to GitHub repos, URL request for GitHub profile picture, GitHub Badge, and table of contents. 
 
 This READme is an adaptation from the result.
 _______
@@ -28,7 +28,7 @@ _______
 </p>
 
 <p align="center">
-    <img src="images/ss2.png" width="300" />
+    <img src="images/ss2.png" width="400" />
 </p>
 
 ____
