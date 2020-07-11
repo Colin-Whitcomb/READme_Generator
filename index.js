@@ -17,7 +17,7 @@ inquirer.prompt(
     {
         // Description
         type: "input",
-        message: "What is the READme Description?",
+        message: "What is the description of the application?",
         name: "description"
     },
     {
@@ -38,7 +38,7 @@ inquirer.prompt(
       name: "license",
       choices: [
         "MIT",
-        "GPL v3",
+        "GPLv3",
         "AGPL"
       ]
     },
@@ -51,14 +51,20 @@ inquirer.prompt(
     {
         // Tests
         type: "input",
-        message: "Please describe the usage of the app:",
+        message: "What tests did you run on this application?",
         name: "tests"
     },
     {
         // Questions
         type: "input",
-        message: "Are there any questions that remain about this project?",
-        name: "questions"
+        message: "What's your email address?",
+        name: "email"
+    },
+    {
+        // Questions
+        type: "input",
+        message: "Please provide a url for your GitHub Profile Picture:",
+        name: "image"
     },
 
     // The generated README includes 1 badge that's specific to the repository.
@@ -68,55 +74,45 @@ inquirer.prompt(
 ]).then(function (data) {
     console.log(data);
 
-    // Taking user inputs and moving to page
-    var title = data.title;
-    var github = data.git;
-    var description = data.description;
-    var install = data.install;
-    var usage = data.usage;
-    var license = data.license;
-    var contributors = data.contributors;
-    var tests = data.tests;
-    var questions = data.questions;
-
-
     // format of ReadMe
     var page = 
 `
-# ${ title }
+# ${ data.title }
 
-### [GitHub Repository](https://github.com/${ github })
+### [GitHub Repository](https://github.com/${ data.git })
+ 
+<p align="center">
+    <img src="${ data.image }" width="500" />
+</p>
     
 ### Description
-${ description }
+${ data.description }
     
-### Table of contents (links of:)
+### Table of Contents
     
-* Installation
-* Usage
-* License
-* Contributing
-* Tests
-* Questions
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
     
 ### Installation
-${ install }
+${ data.install }
 
 ### Usage
-${ usage }
+${ data.usage }
 
-### License badge
-[![License: ${ license }]("https://img.shields.io/badge/License-${ license }-yellow.svg)](https://opensource.org/licenses/${ license }")
+### License
+[![License: ${ data.license }](https://img.shields.io/badge/License-${ data.license }-yellow.svg)](https://opensource.org/licenses/${ data.license })
    
-
-### Contributing
-${ contributors }
-
 ### Tests
-${ tests }
+${ data.tests }
 
-### Questions
- ${ questions }`
+### Questions?
+Contact me! 
+* Authors: ${ data.contributors }
+* Email me: ${ data.email }`
 
 
 
