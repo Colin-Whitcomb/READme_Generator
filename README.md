@@ -17,20 +17,18 @@ This READme is an adaptation from the result.
 _______
 ## Table of Contents
 
-* [License](#license)
-
 * [Technologies Used](#technologies_used)
 
 * [Contact](#contact)
     
-## Screen Shots 
+## Generated READme Screen Shots 
 
 <p align="center">
-    <img src="images/ss1.png" width="350" />
+    <img src="images/ss1.png" width="400" />
 </p>
 
 <p align="center">
-    <img src="images/ss2.png" width="350" />
+    <img src="images/ss2.png" width="300" />
 </p>
 
 ____
