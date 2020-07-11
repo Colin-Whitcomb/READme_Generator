@@ -42,8 +42,6 @@ ____
 
 ## Contact
 
-
 * [Colin Whitcomb](https://github.com/Colin-Whitcomb)
-* [Email](csammyw@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/colin-whitcomb-b808301a6/)
 * [Portfolio](https://colin-whitcomb.github.io/Portfolio/)
